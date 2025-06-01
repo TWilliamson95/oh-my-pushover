@@ -1,0 +1,8 @@
+# folders
+coverage/
+tests/
+
+# files
+*.ts
+!*.d.ts
+tsconfig.json

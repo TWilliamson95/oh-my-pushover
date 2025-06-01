@@ -1,0 +1,27 @@
+{
+  "name": "pushover",
+  "version": "1.0.0",
+  "description": "A handler for calling the Pushover API",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx tsc -d",
+    "test": "npx jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "29.2.0",
+    "@types/node": "22.10.2",
+    "@types/sinon": "17.0.4",
+    "jest": "29.2.1",
+    "nock": "13.5.6",
+    "sinon": "20.0.0",
+    "ts-jest": "29.0.5",
+    "ts-node": "10.9.1",
+    "typescript": "5.7.2"
+  },
+  "dependencies": {
+    "oh-my-got-so-simple": "1.0.3"
+  }
+}
