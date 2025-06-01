@@ -1,6 +1,6 @@
 {
   "name": "oh-my-pushover",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A handler for calling the Pushover API",
   "main": "dist/index.js",
   "scripts": {
