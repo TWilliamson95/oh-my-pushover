@@ -79,6 +79,7 @@ export class PushoverHandler {
     // any error is intentionally uncaught - errors should be handled by the caller
     return await ohMyGot().post("https://api.pushover.net/1/messages.json", {
       json: body,
+      responseType: "json", // all Pushover API responses are JSON objects
     });
   };
 }
