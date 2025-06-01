@@ -30,7 +30,7 @@ export interface IPushoverBody extends IUserConfig, IExtraConfig {
 
 interface IPushoverResponse {
   statusCode: number;
-  body: JSON;
+  body: Record<string, any>; // this needs to be properly typed at some point
 }
 
 /**
