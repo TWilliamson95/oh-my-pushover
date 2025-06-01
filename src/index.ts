@@ -28,6 +28,11 @@ export interface IPushoverBody extends IUserConfig, IExtraConfig {
   priority: -2 | -1 | 0 | 1 | 2;
 }
 
+interface IPushoverResponse {
+  statusCode: number;
+  body: JSON;
+}
+
 /**
  * Handles sending messages via the Pushover API. Supports priority, retry and expire configuration.
  */
@@ -67,7 +72,7 @@ export class PushoverHandler {
     message: string,
     priority: Priority,
     overrides?: IExtraConfig
-  ) => {
+  ): Promise<IPushoverResponse> => {
     const body: IPushoverBody = {
       user: this.config.user,
       token: this.config.token,

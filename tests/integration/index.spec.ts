@@ -44,6 +44,7 @@ describe("Send Message", () => {
       retry: 30,
       expire: 3600,
     });
+    expect(response.statusCode).toEqual(200);
     expect(response.body).toEqual({
       message: "successfully processed",
     });
