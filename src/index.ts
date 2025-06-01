@@ -77,7 +77,7 @@ export class PushoverHandler {
       expire: overrides?.expire ?? this.config.expire,
     };
     // any error is intentionally uncaught - errors should be handled by the caller
-    await ohMyGot().post("https://api.pushover.net/1/messages.json", {
+    return await ohMyGot().post("https://api.pushover.net/1/messages.json", {
       json: body,
     });
   };
