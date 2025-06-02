@@ -24,7 +24,7 @@ Note: The `Priority` enum is also exported from this package.
 You can also check to see if the handler has been given correct credentials, and can successfully call the API by doing:
 
 ```
-const canCallApi = await pushoverHandler.canCallAPI(); // returns a boolean
+const canCallApi = await pushoverHandler.canCallApi(); // returns a boolean
 ```
 
 ## Notes:
