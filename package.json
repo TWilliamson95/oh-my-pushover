@@ -1,7 +1,7 @@
 {
   "name": "oh-my-pushover",
   "version": "1.1.2",
-  "description": "A simple handler for calling the Pushover API",
+  "description": "A simple TypeScript handler for calling the Pushover API",
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc -d",
