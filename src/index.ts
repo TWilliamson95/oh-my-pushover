@@ -14,8 +14,8 @@ interface IUserConfig {
 }
 
 interface IExtraConfig {
-  retry: 30 | 60 | 90 | 120; // seconds
-  expire: 3600 | 7200 | 10800; // seconds
+  retry?: 30 | 60 | 90 | 120; // seconds
+  expire?: 3600 | 7200 | 10800; // seconds
 }
 
 interface IPushoverClassConfig extends IUserConfig, IExtraConfig {}
@@ -55,6 +55,31 @@ export class PushoverHandler {
       expire: config.expire ?? 3600,
     };
   }
+
+  /**
+   * Verifies that credentials are correct and successful calls can be sent to the Pushover API. Does this by sending a test message (lowest priority) to the Pushover API.
+   *
+   * @returns A boolean value of whether the credentials are correct and API calls can be made.
+   *
+   * @remarks
+   * An error will only be thrown in cases outside of incorrect credentials e.g. network error.
+   */
+  canCallApi = async () => {
+    const body: IPushoverBody = {
+      user: this.config.user,
+      token: this.config.token,
+      message: "Call to API test",
+      priority: -2,
+    };
+    const response: IPushoverResponse = await ohMyGot().post(
+      "https://api.pushover.net/1/messages.json",
+      {
+        json: body,
+        responseType: "json", // all Pushover API responses are JSON objects
+      }
+    );
+    return response.body.status === 1;
+  };
 
   /**
    * Sends a message via Pushover with the configured credentials and retry/expire options. Retry and expire options only considered for EMERGENCY priority

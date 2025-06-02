@@ -44,6 +44,7 @@ describe("Send Message", () => {
             retry: 30,
             expire: 3600,
           },
+          responseType: "json",
         }
       );
     }
@@ -70,6 +71,7 @@ describe("Send Message", () => {
           retry: 120,
           expire: 10800,
         },
+        responseType: "json",
       }
     );
   });
@@ -99,6 +101,7 @@ describe("Send Message", () => {
           retry: 90,
           expire: 7200,
         },
+        responseType: "json",
       }
     );
   });
